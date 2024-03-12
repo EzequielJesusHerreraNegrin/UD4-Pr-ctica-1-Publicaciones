@@ -1,4 +1,4 @@
-package net.Para_Dummies.Utilidades;
+package net.paradummies.functionalities;
 
 public class ConsumptionTax {
 

@@ -1,7 +1,7 @@
-package net.Para_Dummies.Utilidades;
+package net.paradummies.functionalities;
 import java.util.Scanner;
 
-import net.Para_Dummies.Publicaciones.OtherPublications.Revista;
+import net.paradummies.publications.types.Magazine;
 
 public class Menu {
 
@@ -50,7 +50,7 @@ public class Menu {
             }
         }
     }
-    
+
     /* public void addNewMagazine(){
 
     }

@@ -1,8 +1,8 @@
-package net.Para_Dummies.Publicaciones.MainPublication;
+package net.paradummies.publications;
 
 import java.time.LocalDate;
 
-public class Publicacion {
+public class Publication {
 
     protected String title;
     protected int numberOfPages;
@@ -11,13 +11,14 @@ public class Publicacion {
     protected float pvp;
     protected LocalDate lastUpdate;
 
-    public Publicacion(String title, int numberOfPages, int isbn, float distributionPrice,
-    LocalDate lastUpdate) {
+    public Publication(String title, int numberOfPages, int isbn, float distributionPrice,
+    String lastUpdate2) {
         this.title = title;
         this.numberOfPages = numberOfPages;
         this.isbn = isbn;
         this.distributionPrice = distributionPrice;
-        this.lastUpdate = lastUpdate;
+        this.pvp = distributionPrice + 5;
+        this.lastUpdate = dateBiulder(lastUpdate2);
     }
 
     public String getTitle() {
@@ -48,6 +49,9 @@ public class Publicacion {
         return pvp;
     }
 
+    public void setPvp(float pvp) {
+        this.pvp = this.distributionPrice + 5;
+    }
 
     public LocalDate getLastUpdate() {
         return lastUpdate;
@@ -65,10 +69,13 @@ public class Publicacion {
         this.isbn = isbn;
     }
 
-    public String toString() {
-        return """
-                
-                """;
+    protected LocalDate dateBiulder(String date) {
+
+        String[] arrSplit = date.split("/");
+        int day = Integer.parseInt(arrSplit[2]);
+        int month = Integer.parseInt(arrSplit[1]);
+        int year = Integer.parseInt(arrSplit[0]);
+        return LocalDate.of(year, month, day);
     }
 
 }
