@@ -1,4 +1,4 @@
-package net.Para_Dummies;
+package net.Para_Dummies.Publicaciones.MainPublication;
 
 import java.time.LocalDate;
 
@@ -7,17 +7,16 @@ public class Publicacion {
     protected String title;
     protected int numberOfPages;
     protected int isbn = 0;
-    protected double distributionPrice;
-    protected double pvp;
+    protected float distributionPrice;
+    protected float pvp;
     protected LocalDate lastUpdate;
 
-    public Publicacion(String title, int numberOfPages, int isbn, double distributionPrice, double pvp,
-            LocalDate lastUpdate) {
+    public Publicacion(String title, int numberOfPages, int isbn, float distributionPrice,
+    LocalDate lastUpdate) {
         this.title = title;
         this.numberOfPages = numberOfPages;
         this.isbn = isbn;
         this.distributionPrice = distributionPrice;
-        this.pvp = pvp;
         this.lastUpdate = lastUpdate;
     }
 
@@ -37,21 +36,18 @@ public class Publicacion {
         this.numberOfPages = numberOfPages;
     }
 
-    public double getDistributionPrice() {
+    public float getDistributionPrice() {
         return distributionPrice;
     }
 
-    public void setDistributionPrice(double distributionPrice) {
+    public void setDistributionPrice(float distributionPrice) {
         this.distributionPrice = distributionPrice;
     }
 
-    public double getPvp() {
+    public float getPvp() {
         return pvp;
     }
 
-    public void setPvp(double pvp) {
-        this.pvp = pvp;
-    }
 
     public LocalDate getLastUpdate() {
         return lastUpdate;
@@ -67,6 +63,12 @@ public class Publicacion {
 
     public void setIsbn(int isbn) {
         this.isbn = isbn;
+    }
+
+    public String toString() {
+        return """
+                
+                """;
     }
 
 }
