@@ -1,7 +1,7 @@
 package net.paradummies.functionalities;
 
 import java.util.Scanner;
-
+import net.paradummies.publications.types.Gender;
 import net.paradummies.publications.Publication;
 import net.paradummies.publications.types.Magazine;
 import net.paradummies.publications.types.Novel;
@@ -33,7 +33,8 @@ public class Menu {
         int isbnCast = Integer.parseInt(arrSplit[2]);
         float distributionPriceCast = Float.parseFloat(arrSplit[3]);
 
-        TextBook textBook = new TextBook(arrSplit[0], numberOfpagesCast, isbnCast, distributionPriceCast, arrSplit[4], arrSplit[5], arrSplit[6]);
+        TextBook textBook = new TextBook(arrSplit[0], numberOfpagesCast, isbnCast, distributionPriceCast, arrSplit[4],
+                arrSplit[5], arrSplit[6]);
 
         return textBook;
     }
@@ -46,7 +47,13 @@ public class Menu {
         float distributionPriceCast = Float.parseFloat(arrSplit[3]);
         int topicCast = Integer.parseInt(arrSplit[5]);
 
-        Novel novel = new Novel(arrSplit[0], numberOfpagesCast, isbnCast, distributionPriceCast, arrSplit[4], topicCast, arrSplit[6]);
+        // switch
+        Gender gender = Gender.values()[topicCast];
+
+        arrSplit[5] = String.valueOf(gender);
+
+        Novel novel = new Novel(arrSplit[0], numberOfpagesCast, isbnCast, distributionPriceCast, arrSplit[4],
+                arrSplit[5], arrSplit[6]);
 
         return novel;
     }

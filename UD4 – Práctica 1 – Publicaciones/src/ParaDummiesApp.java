@@ -70,7 +70,7 @@ public class ParaDummiesApp {
                 """);
             String novelInfo = scanner.nextLine();
 
-            Publication.safePublication(menu.addNewNovel(novelInfo));
+            Publication.safePublication(menu.addNewNovel("tu, 12, 0, 12, 2001/03/02, 2, yo"));
 
             System.out.println("\nNovela añadida exitosamente");
 
