@@ -1,16 +1,48 @@
 package net.paradummies.functionalities;
 
-public class ConsumptionTax {
+import net.paradummies.publications.Publication;
 
-    public static float calIGICTax(int price){
+public class ConsumptionTax extends Publication{
 
-        return price * 1.07f;
-        // el pvp deve contener el incremento del impuesto, el precio base es
-        // distributionprice
+    protected static float igic  = 1.07f;
+    protected static float iva  = 1.21f;
+
+    public ConsumptionTax(float distributionPrice){
+        super(distributionPrice);
     }
 
-    public static float calIVATax(int price){
+    public static void calIGICTax(int isbn /* float distributionPrice */){
 
-        return price * 1.21f;
+        for (Publication publication : companyBackup) {
+            
+            if (publication != null) {
+                if (publication.getIsbn() == isbn && publication != null) {
+                    float distributionPrice = publication.getDistributionPrice();
+                    float pvp = distributionPrice * igic;
+                    System.out.println("\nEl precio de venda de "+publication.getTitle()+" en Canarias, es de :"+pvp+"€.\n");
+                }
+            }
+        }
+        
+                // el pvp deve contener el incremento del impuesto, el precio base es
+        // distributionprice
+        
+    }
+
+    public static void calIVATax(int isbn){
+
+        for (Publication publication : companyBackup) {
+
+            if (publication != null) {
+                if (publication.getIsbn() == isbn && publication != null) {
+                    float distributionPrice = publication.getDistributionPrice();
+                    float pvp = distributionPrice * iva;
+                    System.out.println("\nEl precio de venda de "+publication.getTitle()+" en peninsula, es de :"+pvp+"€.\n");
+                }
+            }
+            
+        }
+        
+        
     }
 }

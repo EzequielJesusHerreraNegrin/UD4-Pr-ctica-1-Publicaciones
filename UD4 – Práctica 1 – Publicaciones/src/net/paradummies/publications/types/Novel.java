@@ -8,7 +8,8 @@ public class Novel extends Publication {
     protected String booktopic;
     protected String author;
 
-    public Novel(String title, int numberOfPages, int isbn, float distributionPrice, String lastUpdate, int topic, String author) {
+    public Novel(String title, int numberOfPages, int isbn, float distributionPrice, String lastUpdate, int topic,
+            String author) {
         super(title, numberOfPages, isbn, distributionPrice, lastUpdate);
         booktopic = TOPICS[topic];
         this.author = author;
@@ -29,13 +30,14 @@ public class Novel extends Publication {
     @Override
     public String toString() {
 
-        return "--------------------------------------=== " + this.title + " ===----------------------------------\n" +
-                "Tematica: " + this.booktopic+
+        return "\n--------------------------------------=== " + this.title + " ===----------------------------------\n"
+                +
+                "Tematica: " + this.booktopic +
                 "\nAutor: " + this.author +
-                "\nNumero de paginas: "+this.numberOfPages+
-                "\nPrecio de distribucion: "+this.distributionPrice+
-                "\nPrecio de venta el publico: "+this.pvp+
-                "\n===============================================================================================";
+                "\nNumero de paginas: " + this.numberOfPages +
+                "\nPrecio de distribucion: " + this.distributionPrice +
+                "\nPrecio de venta el publico: " + this.pvp +
+                "\n===============================================================================================\n";
     }
 
 }

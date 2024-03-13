@@ -1,74 +1,54 @@
 package net.paradummies.functionalities;
+
 import java.util.Scanner;
 
+import net.paradummies.publications.Publication;
 import net.paradummies.publications.types.Magazine;
+import net.paradummies.publications.types.Novel;
+import net.paradummies.publications.types.TextBook;
 
 public class Menu {
 
-    public void shootMenu(){
-        Scanner scanner = new Scanner(System.in);
-        String option = "p";
-
-        while(option != "f"){
-
-            System.out.println("""
-                ----------------Para_Dummies APP----------------
-                -MENU:
-                a. Añadir una nueva revista.
-                b. Añadir un nuevo libro de texto.
-                c. Añadir una nueva novela.
-                d. Mostrar el listado de todas las publicaciones.
-                e. Selección de una publicación y cálculo de su precio en Canarias y en península.
-                f. Salir del programa
-                """);
-
-            option = scanner.nextLine();
-
-            switch (option) {
-                case "a":
-                    
-                    break;
-                case "b":
-                    
-                    break;
-                case "c":
-                    
-                    break;
-                case "d":
-                    
-                    break;
-                case "e":
-                    
-                    break;
-                case "f":
-                    
-                    break;
-            
-                default:
-                System.out.println("No se contempla esa opcion \nPor favor \nintroduzca una de las letras señaladas en el Menú.");
-                    break;
-            }
-        }
+    public Menu() {
     }
 
-    /* public void addNewMagazine(){
+    public Magazine addNewMagazine(String magazineInfo) {
+        String[] arrSplit = magazineInfo.split(", ");
 
+        int numberOfpagesCast = Integer.parseInt(arrSplit[1]);
+        int isbnCast = Integer.parseInt(arrSplit[2]);
+        float distributionPriceCast = Float.parseFloat(arrSplit[3]);
+        int magazineNumberCast = Integer.parseInt(arrSplit[5]);
+
+        Magazine magazine = new Magazine(arrSplit[0], numberOfpagesCast, isbnCast, distributionPriceCast, arrSplit[4],
+                magazineNumberCast, arrSplit[6]);
+
+        return magazine;
     }
 
-    public void addNewTextBook(){
+    public TextBook addNewTextBook(String textBookinfo) {
+        String[] arrSplit = textBookinfo.split(", ");
 
+        int numberOfpagesCast = Integer.parseInt(arrSplit[1]);
+        int isbnCast = Integer.parseInt(arrSplit[2]);
+        float distributionPriceCast = Float.parseFloat(arrSplit[3]);
+
+        TextBook textBook = new TextBook(arrSplit[0], numberOfpagesCast, isbnCast, distributionPriceCast, arrSplit[4], arrSplit[5], arrSplit[6]);
+
+        return textBook;
     }
 
-    public void addNewNovel(){
+    public Novel addNewNovel(String novelInfo) {
+        String[] arrSplit = novelInfo.split(", ");
 
+        int numberOfpagesCast = Integer.parseInt(arrSplit[1]);
+        int isbnCast = Integer.parseInt(arrSplit[2]);
+        float distributionPriceCast = Float.parseFloat(arrSplit[3]);
+        int topicCast = Integer.parseInt(arrSplit[5]);
+
+        Novel novel = new Novel(arrSplit[0], numberOfpagesCast, isbnCast, distributionPriceCast, arrSplit[4], topicCast, arrSplit[6]);
+
+        return novel;
     }
-
-    public void showAllPublications(){
-
-    }
-
-    public void calConsumptionTax(){
-
-    } */
 
 }

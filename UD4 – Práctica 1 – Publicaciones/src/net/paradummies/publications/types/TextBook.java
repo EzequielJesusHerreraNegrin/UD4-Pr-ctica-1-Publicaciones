@@ -32,7 +32,7 @@ public class TextBook extends Publication {
 
     protected String[] chapterCollector(String chaptersName) {
 
-        String[] arrSplit = chaptersName.split(", ");
+        String[] arrSplit = chaptersName.split("_");
         this.chaptersName = arrSplit;
     
         return arrSplit;
@@ -54,13 +54,13 @@ public class TextBook extends Publication {
 
     @Override
     public String toString(){
-        return "--------------------------------------=== " + this.title + " ===----------------------------------\n" +
+        return "\n--------------------------------------=== " + this.title + " ===----------------------------------\n" +
         "Asignatura: " + this.subject+
         "\nLista de temas: " +
         chapterPrinter()+
         "\nPrecio de distribucion: "+this.distributionPrice+
         "\nPrecio de venta el publico: "+this.pvp+
-        "\n===============================================================================================";
+        "\n===============================================================================================\n";
     }
 
 }

@@ -33,7 +33,7 @@ public class Magazine extends Publication{
 
     protected String[] articleCollector(String listOfArticles) {
 
-        String[] arrSplit = listOfArticles.split(", ");
+        String[] arrSplit = listOfArticles.split("_");
         this.listOfArticles = arrSplit;
     
         return arrSplit;
@@ -56,13 +56,13 @@ public class Magazine extends Publication{
     @Override
     public String toString() {
 
-        return "--------------------------------------=== " + this.title + " ===----------------------------------\n" +
+        return "\n--------------------------------------=== " + this.title + " ===----------------------------------\n" +
                 "Numero de revista: " + this.magazineNumber+
                 "\nLista de articulos: " +
                 articlePrinter()+
                 "\nPrecio de distribucion: "+this.distributionPrice+
                 "\nPrecio de venta el publico: "+this.pvp+
-                "\n===============================================================================================";
+                "\n===============================================================================================\n";
     }
 
 }
