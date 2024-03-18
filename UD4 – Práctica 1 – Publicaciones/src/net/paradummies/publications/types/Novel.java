@@ -8,7 +8,8 @@ public class Novel extends Publication {
     protected String booktopic;
     protected String author;
 
-    public Novel(String title, int numberOfPages, int isbn, float distributionPrice, String lastUpdate, String bookTopic,
+    public Novel(String title, int numberOfPages, int isbn, float distributionPrice, String lastUpdate,
+            String bookTopic,
             String author) {
         super(title, numberOfPages, isbn, distributionPrice, lastUpdate);
         this.author = author;
